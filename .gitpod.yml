@@ -4,3 +4,7 @@ image:
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
     command: './main.py'
+
+vscode:
+  extensions:
+    - sourcery.sourcery@0.8.6:HKaqb4fBNrcGfvm8+UK0+A==
