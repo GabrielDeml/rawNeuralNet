@@ -16,7 +16,7 @@ class FakeNumpy:
         """
         return number // 10**n % 10
 
-    def randomInt(self) -> int:
+    def random_int(self) -> int:
         """ Returns a random int
 
         Returns:
@@ -25,3 +25,6 @@ class FakeNumpy:
         """
         with open("/dev/urandom", 'rb') as f:
             return int(int.from_bytes(f.read(1), 'big')/25.5)
+
+    # def dot2D(self, matrix1 , matrix2):
+    #     if()

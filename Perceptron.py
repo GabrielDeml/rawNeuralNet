@@ -7,5 +7,5 @@ class Perceptron:
         self.size = size
         self.weight = [0 for _ in range(size)]
 
-    def Get_Weights(self):
+    def get_weights(self):
         return self.weight
