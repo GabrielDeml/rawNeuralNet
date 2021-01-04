@@ -3,7 +3,7 @@ image:
 
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
-    command: './main.py'
+    command: './Main.py'
 
 vscode:
   extensions:

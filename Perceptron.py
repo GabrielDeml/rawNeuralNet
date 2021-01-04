@@ -1,12 +1,11 @@
 class Perceptron:
-    size = 0
-    bias = 0
-    weight = 0
+    size = int(0)
+    bias = int(0)
+    weight = None
 
-    def __init__(self, size):
+    def __init__(self, size: int):
         self.size = size
         self.weight = [0 for _ in range(size)]
 
-    def Print_Weights(self):
-        print("hello")
-        print(self.weight)
+    def Get_Weights(self):
+        return self.weight
