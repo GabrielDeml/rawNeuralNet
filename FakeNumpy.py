@@ -1,30 +1,36 @@
 import os
 
 
-class FakeNumpy:
+def random_int() -> int:
+    """ Returns a random int
 
-    def get_digit(self, number : int, n : int) -> int:
-        """ Returns the nth number in the integer
+    Returns:
+        int: The random int generated
 
-        Args:
-            number (int): Number to take the n digit from
-            n (int): location of n to take the number from
+    """
+    with open("/dev/urandom", 'rb') as f:
+        return int(int.from_bytes(f.read(1), 'big') / 25.5)
 
-        Returns:
-            int: Number taken from the orginal number
 
-        """
-        return number // 10**n % 10
+def get_digit(number: int, n: int) -> int:
+    """ Returns the nth number in the integer
 
-    def random_int(self) -> int:
-        """ Returns a random int
+    Args:
+        number (int): Number to take the n digit from
+        n (int): location of n to take the number from
 
-        Returns:
-            int: The random int generated
+    Returns:
+        int: Number taken from the orginal number
 
-        """
-        with open("/dev/urandom", 'rb') as f:
-            return int(int.from_bytes(f.read(1), 'big')/25.5)
+    """
+    return number // 10 ** n % 10
 
-    # def dot2D(self, matrix1 , matrix2):
-    #     if()
+
+def dot2d(matrix1: list, matrix2: list) -> int:
+    out_list = int(0)
+    if len(matrix1) == len(matrix2):
+        out_list = sum(
+            (matrix1[pointer] * matrix2[pointer])
+            for pointer in range(len(matrix1))
+        )
+    return out_list

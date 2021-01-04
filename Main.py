@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from Perceptron import Perceptron
-from FakeNumpy import FakeNumpy
+from FakeNumpy import *
 
-data = [1,2,3,4,5]
-labels = [1,2,3,4,5]
-data2 = [[1,2], [3,4],[5,6],[7,8],[9,10]]
+data = list([1, 2, 3, 4, 5])
+labels = list([1, 2, 3, 4, 5])
+data2 = list([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])
 
 perceptron = Perceptron(10)
-fakeNumpy = FakeNumpy()
+# fakeNumpy = FakeNumpy()
 
 if __name__ == "__main__":
     print(perceptron.get_weights())
-    print(fakeNumpy.random_int())
+    print(random_int())
     print(data2)
-        
+    print(dot2d([2, 2], [1]))
