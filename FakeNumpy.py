@@ -55,6 +55,22 @@ def element_multiply(matrix1: list, matrix2: list) -> list:
     return out_matrix
 
 
+def matrix_add(matrix: list, n: int) -> list:
+    """
+    Do Addition on a matrix
+    :param matrix: First matrix
+    :param n: Number to add to the matrix
+    :return: The result of the addition
+    """
+    out_matrix = []
+    for item in matrix:
+        if isinstance(item, list):
+            out_matrix.append(matrix_add(item, n))
+        else:
+            out_matrix.append(item + n)
+    return out_matrix
+
+
 def pretty_print(matrix: list) -> None:
     """
     Print a matrix or a vector in a pretty way
@@ -82,4 +98,15 @@ def create_zero_matrix(size: int) -> list:
     :return: The matrix created
     """
     rows = [0 for _ in range(size)]
+    return [rows for _ in range(size)]
+
+
+def create_n_matrix(size: int, n: int) -> list:
+    """
+    Create a matrix of size x filled with n
+    :param size: Size of the matrix
+    :param n: The value to fill the matrix with
+    :return: The matrix created
+    """
+    rows = [n for _ in range(size)]
     return [rows for _ in range(size)]
