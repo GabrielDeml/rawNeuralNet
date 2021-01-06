@@ -21,20 +21,24 @@ def get_digit(number: int, n: int) -> int:
     return number // 10 ** n % 10
 
 
-def dot_vector(vector1: list, vector2: list) -> int:
+def matrix_dot(matrix1: list, matrix2: list) -> int:
     """
-    Take the dot product of the two 2d vectors
-    :param vector1: First vector
-    :param vector2: Second vector
-    :return: Dot product of the two vectors
+    Take the dot product of the two 2d matrices
+    :param matrix1: First matrix
+    :param matrix2: Second matrix
+    :return: Dot product of the two matrices
     """
-    # Make sure the length of the vectors are the same
-    if len(vector1) != len(vector2):
-        raise Exception("Vectors must have the same length for dot product")
-    return sum(
-        (vector1[_] * vector2[_])
-        for _ in range(len(vector1))
-    )
+    # Make sure the length of the matrices are the same
+    # TODO: Make this use matrices instead of vectors
+    if len(matrix1) != len(matrix2):
+        raise Exception("Matrices must have the same length for dot product")
+    out = 0
+    for i in range(len(matrix1)):
+        if isinstance(matrix1[i], list) & isinstance(matrix2[i], list):
+            out += matrix_dot(matrix1[i], matrix2[i])
+        else:
+            out += matrix1[i] * matrix2[i]
+    return out
 
 
 def element_multiply(matrix1: list, matrix2: list) -> list:
@@ -77,6 +81,9 @@ def pretty_print(matrix: list) -> None:
     :param matrix: Matrix to print
     :return: None
     """
+    if isinstance(matrix, int):
+        print(matrix)
+        return
     # For every element in the list
     for i in matrix:
         # Check if it is a list

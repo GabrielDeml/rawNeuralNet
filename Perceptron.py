@@ -14,4 +14,9 @@ class Perceptron:
         return self.weights
 
     def calculate_perceptron(self, data_in: list):
-        return matrix_add(element_multiply(data_in, self.weights), self.bias)
+        """
+        Calculate the output of a perceptron
+        :param data_in: Input data to the perceptron
+        :return: The output of the perceptron
+        """
+        return matrix_dot(data_in, self.weights) + self.bias
