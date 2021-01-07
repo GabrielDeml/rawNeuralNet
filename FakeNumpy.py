@@ -1,6 +1,3 @@
-import os
-
-
 def random_int() -> int:
     """
     Creates a random number between 0 and 9
@@ -29,7 +26,6 @@ def matrix_dot(matrix1: list, matrix2: list) -> int:
     :return: Dot product of the two matrices
     """
     # Make sure the length of the matrices are the same
-    # TODO: Make this use matrices instead of vectors
     if len(matrix1) != len(matrix2):
         raise Exception("Matrices must have the same length for dot product")
     out = 0
@@ -98,16 +94,6 @@ def pretty_print(matrix: list) -> None:
         print()
 
 
-def create_zero_matrix(size: int) -> list:
-    """
-    Create a matrix of size x filled with zeros
-    :param size: Size to make the matrix
-    :return: The matrix created
-    """
-    rows = [0 for _ in range(size)]
-    return [rows for _ in range(size)]
-
-
 def create_n_matrix(size: int, n: int) -> list:
     """
     Create a matrix of size x filled with n
@@ -115,5 +101,22 @@ def create_n_matrix(size: int, n: int) -> list:
     :param n: The value to fill the matrix with
     :return: The matrix created
     """
-    rows = [n for _ in range(size)]
-    return [rows for _ in range(size)]
+    return [[n for _ in range(size)] for _ in range(size)]
+
+
+def sigmoid(x: float) -> float:
+    """
+    Calculate sigmoid function
+    :param x: Input to the sigmoid function
+    :return: Value computed by the sigmoid function
+    """
+    return 1 / (1 + (2.7182818284590452353602874713526624 ** (-x)))
+
+
+def relu(x: float) -> float:
+    """
+    Relu activation function
+    :param x: Number to apply the activation function
+    :return: Value after relu
+    """
+    return max(0.0, x)
