@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from Perceptron import Perceptron
-from FakeNumpy import *
+from Support import *
+from MatrixMath import *
+from ActivationFunctions import *
 
 data = list([1, 2, 3, 4, 5])
 labels = list([1, 2, 3, 4, 5])
@@ -23,5 +25,7 @@ if __name__ == "__main__":
     # perceptron.weights = create_n_matrix(2, 1)
     # pretty_print(perceptron.calculate_perceptron(create_n_matrix(3, 1)))
     # print(matrix_dot([2, 2], [2, 2]))
-    pretty_print(create_n_matrix(3, 2))
-    print(sigmoid(2))
+    pretty_print(create_n_matrix(5, 4, random_int))
+    print("==================")
+    # pretty_print(transpose(matrix))
+    # print(sigmoid(2))

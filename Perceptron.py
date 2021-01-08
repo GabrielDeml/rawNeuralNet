@@ -1,4 +1,4 @@
-from FakeNumpy import *
+from Support import *
 
 
 class Perceptron:
@@ -12,7 +12,8 @@ class Perceptron:
         :param size: Size of the weight matrix
         """
         self.size = size
-        self.weights = create_n_matrix(0, size)
+        # TODO: Make this the correct size
+        self.weights = create_n_matrix(0, size, size)
 
     def get_weights(self) -> list:
         """
@@ -28,4 +29,3 @@ class Perceptron:
         :return: The output of the perceptron
         """
         return sigmoid(matrix_dot(data_in, self.weights) + self.bias)
-
