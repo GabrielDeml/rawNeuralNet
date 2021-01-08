@@ -8,7 +8,7 @@ data = list([1, 2, 3, 4, 5])
 labels = list([1, 2, 3, 4, 5])
 data2 = list([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])
 
-perceptron = Perceptron(3)
+perceptron = Perceptron(3, 2)
 # fakeNumpy = FakeNumpy()
 
 if __name__ == "__main__":
