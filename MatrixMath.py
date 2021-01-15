@@ -1,4 +1,4 @@
-def matrix_dot(matrix1: list, matrix2: list) -> int:
+def matrix_dot(matrix1: list, matrix2: list) -> float:
     """
     Take the dot product of the two 2d matrices
     :param matrix1: First matrix
@@ -48,6 +48,22 @@ def matrix_add(matrix: list, n: int) -> list:
             out_matrix.append(matrix_add(item, n))
         else:
             out_matrix.append(item + n)
+    return out_matrix
+
+
+def matrix_generic(matrix: list, f: "Function to apply") -> list:
+    """
+    Do Addition on a matrix
+    :param matrix: First matrix
+    :param f: function to apply to the matrix
+    :return: The result of the addition
+    """
+    out_matrix = []
+    for item in matrix:
+        if isinstance(item, list):
+            out_matrix.append(matrix_add(item, f))
+        else:
+            out_matrix.append(f(item))
     return out_matrix
 
 
