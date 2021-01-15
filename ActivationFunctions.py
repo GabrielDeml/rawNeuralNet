@@ -1,5 +1,4 @@
-# E var I am tried of copying it
-e = 2.7182818284590452353602874713526624
+from Constants import e
 
 
 def sigmoid(x: float) -> float:
@@ -38,10 +37,3 @@ def relu_prime(x: float) -> float:
     if x > 0:
         return 1
     return 0
-
-
-# Dictionary of activation functions
-functionList = {
-    "sigmoid": [sigmoid, sigmoid_prime],
-    "relu": [relu, relu_prime]
-}

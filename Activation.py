@@ -1,4 +1,5 @@
 from ActivationFunctions import *
+from Constants import functionList
 
 
 class Activation:
