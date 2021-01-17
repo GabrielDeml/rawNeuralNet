@@ -5,8 +5,7 @@ from MatrixMath import *
 from Support import *
 
 # Generate fake data
-trainingData = list(range(100))
-labels = matrix_generic(list(range(100)), lambda a: a ** 2)
+trainingData, labels = generate_dataset(100)
 
 # Training values
 epochs = 5

@@ -54,3 +54,26 @@ def create_n_matrix(width: int, height: int, n) -> list:
         return [[n() for _ in range(width)] for _ in range(height)]
     # If it is a number generate a matrix
     return [[n for _ in range(width)] for _ in range(height)]
+
+
+def create_n_vector(width: int, n) -> list:
+    """
+    Create a matrix of size x filled with n
+    :param width: Width of the matrix
+    :param n: The value to fill the matrix with or a function to generate a number
+    :return: The matrix created
+    """
+    # If it is a function generate a vector
+    if callable(n):
+        return [n() for _ in range(width)]
+    # If it is a number generate a vector
+    return [n for _ in range(width)]
+
+
+def generate_dataset(length: int):
+    """
+    Generate a dataset of i with labels i^2
+    :param length: Length of the dataset
+    :return: data and labels
+    """
+    return [[[i ** 2]] for i in range(length)], list(range(length))

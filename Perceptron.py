@@ -19,7 +19,7 @@ class Perceptron:
         self.size_in = size_in
         self.size_out = size_out
         self.weights = create_n_matrix(size_in, size_out, random_int)
-        self.bias = create_n_matrix(1, size_out, random_int)
+        self.bias = create_n_vector(size_out, random_int)
 
     def get_weights(self) -> list:
         """
@@ -35,7 +35,7 @@ class Perceptron:
         :return: The output of the perceptron
         """
         self.data_in = data_in
-        return [matrix_dot([[data_in]], self.weights) + n for n in self.bias]
+        return [matrix_dot(data_in, self.weights) + n for n in self.bias]
 
     def backpropagation(self, out_error: list, learning_rate: float):
         """
