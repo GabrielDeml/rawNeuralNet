@@ -12,7 +12,7 @@ class Activation:
         self.forwardFunction = functionList[function][0]
         self.backwardFunction = functionList[function][1]
 
-    def forward(self, data_in: list) -> float:
+    def forward_propagation(self, data_in: list) -> float:
         """
         Forward propagation on the network
         :param data_in: data from the previous layer
@@ -21,7 +21,7 @@ class Activation:
         self.data_in = data_in
         return self.forwardFunction(data_in)
 
-    def backwards(self, error: float, rate) -> float:
+    def backpropagation(self, error: float, rate) -> float:
         """
         Backward propagation on the network
         :param error: Error of the network

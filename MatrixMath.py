@@ -53,7 +53,7 @@ def matrix_add(matrix: list, n: int) -> list:
 
 def matrix_generic(matrix: list, f: "Function to apply") -> list:
     """
-    Do Addition on a matrix
+    Apply f function to the matrix
     :param matrix: First matrix
     :param f: function to apply to the matrix
     :return: The result of the addition
@@ -61,7 +61,7 @@ def matrix_generic(matrix: list, f: "Function to apply") -> list:
     out_matrix = []
     for item in matrix:
         if isinstance(item, list):
-            out_matrix.append(matrix_add(item, f))
+            out_matrix.append(matrix_generic(item, f))
         else:
             out_matrix.append(f(item))
     return out_matrix

@@ -28,14 +28,14 @@ class Perceptron:
         """
         return self.weights
 
-    def calculate_perceptron(self, data_in: list) -> list:
+    def forward_propagation(self, data_in: list) -> list:
         """
         Calculate the output of a perceptron
         :param data_in: Input data to the perceptron
         :return: The output of the perceptron
         """
         self.data_in = data_in
-        return [matrix_dot(data_in, self.weights) + n for n in self.bias]
+        return [matrix_dot([[data_in]], self.weights) + n for n in self.bias]
 
     def backpropagation(self, out_error: list, learning_rate: float):
         """
@@ -48,5 +48,5 @@ class Perceptron:
         weights_error = matrix_dot(transpose(self.data_in), out_error)
 
         self.weights -= learning_rate * weights_error
-        self.bias -= out_error * learning_rate
+        self.bias -= matrix_generic(out_error, lambda a: a * learning_rate)
         return in_error
