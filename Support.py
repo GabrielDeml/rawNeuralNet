@@ -76,4 +76,4 @@ def generate_dataset(length: int):
     :param length: Length of the dataset
     :return: data and labels
     """
-    return [[[i ** 2]] for i in range(length)], list(range(length))
+    return [[[i]] for i in range(length)], [[i] for i in range(length)]

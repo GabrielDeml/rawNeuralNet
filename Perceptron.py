@@ -35,7 +35,7 @@ class Perceptron:
         :return: The output of the perceptron
         """
         self.data_in = data_in
-        return [matrix_dot(data_in, self.weights) + n for n in self.bias]
+        return [[matrix_dot(data_in, self.weights) + n] for n in self.bias]
 
     def backpropagation(self, out_error: list, learning_rate: float):
         """

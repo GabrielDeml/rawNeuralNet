@@ -19,7 +19,7 @@ class Activation:
         :return: output of the activation layer
         """
         self.data_in = data_in
-        return [self.forwardFunction(i) for i in data_in]
+        return [[self.forwardFunction(j) for j in i] for i in data_in]
 
     def backpropagation(self, error: float, rate) -> float:
         """
